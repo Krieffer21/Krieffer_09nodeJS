@@ -57,9 +57,9 @@ const questions = [
 
 
 function writeToFile(fileName, data) {
-    
-     let readMe = genMark.generateMarkdown(data);
-     fs.writeFile(fileName, readMe, function(err) {
+
+     let readMe = genMark(data);
+     fs.writeFile(fileName, readMe, err => {
         if (err) {
           throw err;
         }
@@ -68,9 +68,12 @@ function writeToFile(fileName, data) {
 
 function init() {
     inquirer.prompt(questions)
-    .then(function(data) {
+    .then(data => {
 
         writeToFile("README.md", data);
+    })
+    .catch(error => {
+        throw error; 
     });
 }
 
