@@ -1,19 +1,20 @@
-var inquirer = require("inquirer");
-
+const inquirer = require("inquirer");
+const genMark = require("./utils/generateMarkdown");
+const fs = require("fs");
 
 const questions = [
-    {
-        type: "",
-        message: "",
-        name: "badge"
-      },
+    // {
+    //     type: "",
+    //     message: "",
+    //     name: "badge"
+    //   },
      {
-        type: "",
+        type: "input",
         message: "What is your project title?",
         name: "title"
       },
       {
-        type: "",
+        type: "input",
         message: "Please describe your project.",
         name: "description"
       },
@@ -23,43 +24,54 @@ const questions = [
     //     name: "contents"
     //   },
       {
-        type: "",
+        type: "input",
         message: "Please describe your installation procedures, including software requirments.",
         name: "installation"
       },
       {
-        type: "",
+        type: "input",
         message: "Please describe the usage of your project.",
         name: "usage"
       },
       {
-        type: "",
+        type: "input",
         message: "What is your license?",
         name: "license"
       },
       {
-        type: "",
-        message: "Please list your contributions.",
+        type: "input",
+        message: "Please describe how others can contribute.",
         name: "contribution"
       },
       {
-        type: "",
-        message: "",
+        type: "input",
+        message: "Describe how you would test your application.",
         name: "tests"
       },
       {
-        type: "",
+        type: "input",
         message: "Please enter you GitHub email so that users can ask questions.",
         name: "questions"
       }
- 
 ];
 
+
 function writeToFile(fileName, data) {
+    
+     let readMe = genMark.generateMarkdown(data);
+     fs.writeFile(fileName, readMe, function(err) {
+        if (err) {
+          throw err;
+        }
+    });
 }
 
 function init() {
+    inquirer.prompt(questions)
+    .then(function(data) {
 
+        writeToFile("README.md", data);
+    });
 }
 
 init();
