@@ -3,11 +3,11 @@ const genMark = require("./utils/generateMarkdown");
 const fs = require("fs");
 
 const questions = [
-    // {
-    //     type: "",
-    //     message: "",
-    //     name: "badge"
-    //   },
+    {
+        type: "input",
+        message: "Please enter your github username to create a badge",
+        name: "username"
+      },
      {
         type: "input",
         message: "What is your project title?",
@@ -18,11 +18,6 @@ const questions = [
         message: "Please describe your project.",
         name: "description"
       },
-    //   {
-    //     type: "",
-    //     message: "",
-    //     name: "contents"
-    //   },
       {
         type: "input",
         message: "Please describe your installation procedures, including software requirments.",

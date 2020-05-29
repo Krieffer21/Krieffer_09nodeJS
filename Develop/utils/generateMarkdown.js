@@ -1,5 +1,6 @@
 function generateMarkdown(data) {
-  return `
+  return `![badmath](https://img.shields.io/github/languages/topbadge/offset-earth/carbon/${data.username})
+
 # ${data.title}
 
 ## ${data.description}
