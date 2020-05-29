@@ -4,12 +4,28 @@ function generateMarkdown(data) {
 
 ## ${data.description}
 
-## ${data.installation}
-## ${data.usage}
-## ${data.license}
-## ${data.contribution}
-## ${data.tests}
-## ${data.questions}
+## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+
+## Installation 
+${data.installation}
+
+## Usage 
+${data.usage}
+
+## License 
+${data.license}
+
+## Contribution 
+${data.contribution}
+
+## Tests 
+${data.tests}
+
+## Questions 
+${data.questions}
 `;
 
 }
