@@ -5,9 +5,20 @@ const fs = require("fs");
 const questions = [
     {
         type: "input",
-        message: "Please enter your github username to create a badge",
+        message: "Please enter your github username.",
         name: "username"
       },
+      {
+        type: "input",
+        message: "Please enter your email.",
+        name: "email"
+      },
+      {
+        type: "input",
+        message: "Please enter your Project URL.",
+        name: "url"
+      },
+
      {
         type: "input",
         message: "What is your project title?",
@@ -29,9 +40,15 @@ const questions = [
         name: "usage"
       },
       {
-        type: "input",
+        type: "checkbox",
         message: "What is your license?",
-        name: "license"
+        name: "license",
+        choices: [
+            "MIT",
+            "ISC",
+            "Apache 2.0",
+            "none",
+        ]
       },
       {
         type: "input",
