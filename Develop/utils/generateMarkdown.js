@@ -17,7 +17,7 @@ ${data.installation}
 ${data.usage}
 
 ## License 
-${data.license}
+The license used for this project was, ${data.license}.
 
 ## Contribution 
 ${data.contribution}
@@ -26,7 +26,7 @@ ${data.contribution}
 ${data.tests}
 
 ## Questions 
-${data.questions}
+For any questions please email me at ${data.questions}.
 `;
 
 }
