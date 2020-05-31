@@ -1,5 +1,6 @@
 function generateMarkdown(data) {
-  return `![badmath](https://img.shields.io/github/languages/topbadge/offset-earth/carbon/${data.username})
+  return `
+![badge](https://img.shields.io/badge/${data.title}-${data.username}-carbon/)
 
 # ${data.title}
 
@@ -28,7 +29,6 @@ ${data.tests}
 ## Questions 
 For any questions please email me at ${data.questions}.
 `;
-
 }
 
 module.exports = generateMarkdown;

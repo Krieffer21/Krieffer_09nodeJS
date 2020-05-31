@@ -8,17 +8,6 @@ const questions = [
         message: "Please enter your github username.",
         name: "username"
       },
-      {
-        type: "input",
-        message: "Please enter your email.",
-        name: "email"
-      },
-      {
-        type: "input",
-        message: "Please enter your Project URL.",
-        name: "url"
-      },
-
      {
         type: "input",
         message: "What is your project title?",
@@ -62,7 +51,7 @@ const questions = [
       },
       {
         type: "input",
-        message: "Please enter you GitHub email so that users can ask questions.",
+        message: "Please enter your email so that users can ask questions.",
         name: "questions"
       }
 ];
@@ -81,7 +70,6 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then(data => {
-
         writeToFile("README.md", data);
     })
     .catch(error => {
